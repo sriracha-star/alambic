@@ -774,6 +774,46 @@ body {
   color: rgba(220,205,255,0.85); line-height: 1.65; flex: 1;
 }
 
+/* ── RÈGLEMENT ── */
+.reglement-wrap {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 3rem;
+  border: 1px solid rgba(180,140,255,0.22);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(180,140,255,0.06) 0%, rgba(120,80,200,0.03) 60%, rgba(200,160,255,0.05) 100%);
+}
+.reglement-title {
+  font-family: var(--darkblack); font-size: 22px; font-weight: 400;
+  letter-spacing: 0.08em; text-align: center;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #e0d0ff 0%, #ffffff 35%, #c0a8f0 60%, #e8e0ff 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.reglement-list {
+  list-style: none;
+  counter-reset: regl;
+  padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 1.35rem;
+}
+.reglement-list li {
+  counter-increment: regl;
+  display: flex; align-items: baseline; gap: 1rem;
+  font-family: Georgia, serif; font-size: 16.5px; font-style: italic;
+  color: rgba(235,225,255,0.88); line-height: 1.72;
+}
+.reglement-list li::before {
+  content: counter(regl);
+  font-family: var(--sc); font-style: normal; font-size: 11px;
+  letter-spacing: 0.15em; color: rgba(180,140,255,0.6);
+  min-width: 1.4rem; text-align: right; flex-shrink: 0;
+  padding-top: 3px;
+}
+.reglement-list li em {
+  font-style: normal;
+  color: rgba(200,175,255,0.75);
+  font-size: 15px;
+}
 /* ── TABS ── */
 .tab-nav {
   display: inline-flex; gap: 0;
@@ -1150,6 +1190,7 @@ body {
     <button class="tab-btn tab-active" data-tab="bw" onclick="switchTab('bw')">Mindfulness</button>
     <button class="tab-btn" data-tab="dc" onclick="switchTab('dc')" style="display:none" data-hidden="true">Deep Core</button>
     <button class="tab-btn" data-tab="sos" onclick="switchTab('sos')">SOS</button>
+    <button class="tab-btn" data-tab="reglement" onclick="switchTab('reglement')">Règlement</button>
   </nav>
   <div class="tab-panel tab-active" id="panel-bw">
   <!-- BRAIN WORKOUT -->
@@ -1868,6 +1909,25 @@ body {
   </div>
   </div><!-- /panel-dc -->
 </div>
+  <div class="tab-panel" id="panel-reglement">
+    <div class="reglement-wrap">
+      <h2 class="reglement-title">Règlement</h2>
+      <ol class="reglement-list">
+        <li>Trust the process, une étape à la fois. Ne pas chercher la big picture, les prochaines étapes ou la perfection. Tunnel vision sans réfléchir à la ligne d'arrivée et à si j'y arriverai ou non.</li>
+        <li>Faire ce que j'ai à faire peu importe mon état d'esprit. Motivation ? Pas nécessaire. Pensées intrusives ? Et alors ? État mental ? Ça passera.</li>
+        <li>Pas de limerence.</li>
+        <li>Si jouska à voix haute, arrêter d'emblée. Accepter ce que j'essaie de corriger.</li>
+        <li>Si jouska dans ma tête, me reconcentrer. <em>NB — la jouska c'est aussi m'imaginer impressionner / être perçue d'une certaine manière, genre sur Instagram ou autre.</em></li>
+        <li>Si apitoiement sur mon sort ou victimisation, me rappeler que le passé ne me définit pas et que beaucoup ont vécu la même chose.</li>
+        <li>Si j'adopte les yeux d'un autre, reprendre mon propre regard calmement. Ce qu'ils ont gardé comme image de moi n'est même pas une version de moi — c'est une projection qu'ils ont inventée.</li>
+        <li>Si je me flagelle pour un truc que j'ai fait par le passé, l'accepter parce que je n'ai pas à être parfaite.</li>
+        <li>Si je me flagelle pour un manquement à une règle (jouska, rumination), l'accepter parce que je n'ai pas à être parfaite et reprendre ma vie normale.</li>
+        <li>Ne pas étaler ma science ni donner des leçons de vie. Être humble.</li>
+        <li>Si quelque chose me coupe dans mon élan, c'est « the test » (The Artist's Way). Reprendre ma vie aussitôt.</li>
+        <li>Vivre les choses sans les partager (moment drôle, blague, film, pensée…), pas par égoïsme mais pour casser l'habitude.</li>
+      </ol>
+    </div>
+  </div>
 
 <div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
   <div class="modal" id="modal">
